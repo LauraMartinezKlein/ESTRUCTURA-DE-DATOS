@@ -1,0 +1,71 @@
+TRIANGULO.H
+#pragma once
+class triangulo
+{
+private:
+	float base;
+	float altura;
+public:
+	triangulo(float _base, float _altura);
+	float area(float _base, float _altura);
+	~triangulo(void);
+	float area(void);//polimorfismo
+	triangulo(void);
+};
+
+
+TRIANGULO.CPP
+#include "StdAfx.h"
+#include "triangulo.h"
+
+
+
+triangulo::triangulo(float _base, float _altura)
+{
+	base=_base;
+	altura=_altura;
+}
+float triangulo::area(float _base, float _altura)
+{
+	float aux;
+	aux=(_base*_altura)/2;
+	return aux;
+}
+triangulo::~triangulo(void)
+{
+}
+triangulo::triangulo(void)
+{
+	base=5;
+	altura=10;
+}
+float triangulo::area(void)
+{
+	
+	float aux;
+	aux=(base*altura)/2;
+	return aux;
+}
+TRIANGULO MAIN
+// areatriangulo.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "triangulo.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+void main ()
+{
+	triangulo t1(10,5); //triangulo = t1.triangulo(10,5);
+	triangulo t2;
+	cout<<"El area del triangulo es: "<<t1.area(2,4)<< endl;
+	cout<<"El area del triangulo es: "<<t2.area()<< endl;
+	/* float z=t1.area(); 
+	cout <<z;*/
+	getch();
+}
+
+
+
