@@ -1,0 +1,63 @@
+PERSONA.H
+#pragma once
+class Persona
+{
+private: //atributos
+	int CI;
+	int edad;
+public:  //metodos
+	Persona(int _ci, int _edad);
+	void Leer();
+	void Correr();
+	~Persona(void);
+};
+
+PERSONA.CPP
+
+#include "StdAfx.h"
+#include "Persona.h"
+#include <iostream>
+using namespace std;
+
+Persona::Persona(int _ci, int _edad)
+{   //se inicializan los atributos
+	edad=_edad;
+	CI=_ci;
+
+}
+
+void Persona:: Leer()
+{ 
+	cout<<"Soy "<<CI<<" y estoy leyendo " <<endl;
+
+}
+
+void Persona::Correr()
+{ 
+	cout<<"Tengo "<<edad<<" anios mi CI es: "<<CI<<" y estoy corriendo una maraton"<<endl;
+}
+Persona::~Persona(void)
+{
+}
+
+
+MAIN
+
+// Ejemplopersona.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "Persona.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+
+void main()
+{
+	Persona p1(8735126,33); //Crear una instancia
+	p1.Leer();
+	p1.Correr();
+	getch();
+
+}
