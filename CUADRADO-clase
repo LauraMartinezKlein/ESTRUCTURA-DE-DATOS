@@ -1,0 +1,60 @@
+Areap.h
+
+#pragma once
+class Areap
+{
+private:
+	float lado;
+public:
+	Areap(float _lado);
+	float area();
+	float perimetro();
+	~Areap(void);
+};
+
+Areap.cpp
+
+#include "StdAfx.h"
+#include "Areap.h"
+
+
+Areap::Areap(float _lado)
+{ 
+	lado=_lado;
+}
+
+float Areap::area()
+{
+	float a;
+	a=lado*lado;
+	return a;
+}
+float Areap::perimetro()
+{
+	float p;
+	p=4*lado;
+	return p;
+}
+
+Areap::~Areap(void)
+{
+}
+
+cuadrado.cpp
+
+#include "stdafx.h"
+#include <iostream>
+#include "Areap.h"
+using namespace std;
+
+void main()
+{ 
+	float l;
+	cout<<"Ingrese el lado del cuadrado: "; cin>>l;
+	cout<<endl;
+	Areap cuadrado(l);
+	cout<<"El area del cuadrado es: "<<cuadrado.area()<<endl;
+	cout<<"El perimetro del cuadrado es: "<<cuadrado.perimetro()<<endl;
+	system("pause");
+
+}
