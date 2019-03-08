@@ -1,14 +1,15 @@
 #pragma once
+#define MAX 10
 class Vector
 {
-private: 
-	int vec[10], n;
+private:
+	int vec[MAX], n;
 public:
-	Vector(void);
-	~Vector(void);
+	Vector(int _n); // constructor
+	~Vector(void); //destructor
 
-	void cargarVector(int vec[], int n);
-	void mostrarVector(int vec[], int n);
-	void eliminarVector(int vec[], int n);
+	void cargarVector(int n); //metodos
+	void mostrarVector(int n);
+	void ordenarVector(int n);
+	void eliminarVector(int &n);
 };
-
