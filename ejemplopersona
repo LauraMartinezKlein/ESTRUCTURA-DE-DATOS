@@ -1,0 +1,61 @@
+Areac.h
+#pragma once
+class Areac
+{
+private:
+	float radio;
+	float altura;
+public:
+	Areac(float r, float h);
+	int calculararea(float pi);
+	~Areac(void);
+};
+
+Areac.cpp
+#include "StdAfx.h"
+#include "Areac.h"
+#include "math.h"
+
+Areac::Areac(float r, float h)
+{
+	radio=r;
+	altura=h;
+}
+
+int Areac::calculararea(float pi)
+{
+	float Ab;
+	float Al;
+	float AT;
+	Ab= (pi*radio*radio);
+	Al= (2*pi*radio*altura);
+	AT= (2*Ab)+Al;
+	return (AT);
+}
+
+Areac::~Areac(void)
+{
+}
+
+
+ejemplopersona.cpp
+#include "stdafx.h"
+#include "Areac.h"
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	float r,h;
+	float pi=3.1416;
+	cout<<"Ingrese el radio del Cilindro: ";
+	cin>>r;
+	cout<<endl;
+	cout<<"Ingrese la altura del Cilindro: ";
+	cin>>h;
+	cout<<endl;
+	Areac c1(r,h);
+	cout<<"El area del cilindro es: "<<c1.calculararea(pi)<<endl;
+	system("pause");
+}
+
