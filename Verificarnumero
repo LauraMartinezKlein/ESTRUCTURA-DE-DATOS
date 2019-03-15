@@ -1,0 +1,71 @@
+#pragma once
+class Dpares
+{
+private: 
+	int numero;
+
+public:
+	Dpares(int _numero);
+	bool verificarpares();
+	~Dpares(void);
+};
+
+
+
+#include "StdAfx.h"
+#include "Dpares.h"
+
+
+
+Dpares::Dpares(int _numero)
+{
+	numero=_numero;
+}
+
+bool Dpares::verificarpares()
+{
+	int digito;
+	bool band= false;
+	do{ 
+		digito=numero%10;
+		if(digito%2==0){ 
+		  band=true;
+		  return (band);
+		}else{ 
+		numero=numero/10;
+	    }
+	}while(numero>0);
+	return(band);
+}
+
+Dpares::~Dpares(void)
+{
+}
+
+
+
+
+
+// ejemplodigitos.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "Dpares.h"
+#include <iostream>
+using namespace std;
+
+
+
+void main()
+{
+	int numero;
+	cout<<"Ingrese el numero a verificar: ";
+	cin>>numero;
+	Dpares n1(numero);
+	if(n1.verificarpares()==0)
+	cout<<"No tiene numeros pares"<<endl;
+	else 
+	cout<<"Tiene numeros pares"<<endl;
+	system("pause");
+}
+
