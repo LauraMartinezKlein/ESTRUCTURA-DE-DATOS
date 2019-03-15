@@ -1,0 +1,63 @@
+// ejemplopersona.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <string>
+#include "iostream"
+#include "Persona.h"
+using namespace std;
+
+void main()
+{
+	int ci;
+	string nombre;
+	cout<<"Ingrese el nombre: ";
+	getline(cin,nombre); 
+	cout<<"Ingrese el ci: ";
+	cin>>ci;
+	Persona p1(ci, nombre);
+	cout<<"El ci es: "<<p1.getci()<<endl;
+	cout<<"El nombre es: "<<p1.getname()<<endl;
+	system ("pause");
+}
+
+
+
+#pragma once
+#include <string>
+using namespace std;
+class Persona
+{
+private:
+	int ci;
+	string nombre;
+public:
+	Persona(int _ci, string _nombre);
+	int getci();
+	string getname();
+	~Persona(void);
+};
+
+
+#include "StdAfx.h"
+#include "Persona.h"
+
+Persona::Persona(int _ci, string _nombre)
+{
+	ci=_ci;
+	nombre=_nombre;
+}
+
+int Persona::getci()
+{
+	return(ci);
+}
+string Persona:: getname()
+{
+	return(nombre);
+}
+Persona::~Persona(void)
+{
+}
+
+
