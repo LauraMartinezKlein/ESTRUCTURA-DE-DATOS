@@ -31,7 +31,8 @@ void main()
 		getline(cin,f1);
 		/*Fecha fecha2(f1);
 		fecha2.mostrar();
-		if (band=fecha2.validar()==true)
+		band=fecha2.validar()
+		if (band==true)
 			cout<<"\nEs una fecha valida";
 		else
 			cout<<"\nEs una fecha no valida"<<endl;*/
@@ -45,7 +46,8 @@ void main()
 		cin>>f2;
 		Fecha fecha3(f2);
 		fecha3.mostrar();
-		if (band=fecha3.validar()==true)
+		band=fecha3.validar()
+		if (band==true)
 			cout<<"\nEs una fecha valida";
 		else
 			cout<<"\nEs una fecha no valida"<<endl;
