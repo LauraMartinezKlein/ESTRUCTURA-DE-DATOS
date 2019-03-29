@@ -1,0 +1,66 @@
+#pragma once
+#define MAX 100
+class matriz
+{
+private:
+	int n,m;
+	int M[MAX][MAX];
+public:
+	matriz(void);
+	~matriz(void);
+	void cargarmat(int n, int m);
+	void mostrarmat(int n, int m);
+};
+
+#include "StdAfx.h"
+#include "matriz.h"
+#include <iostream>
+using namespace std;
+
+matriz::matriz(void)
+{
+}
+
+
+matriz::~matriz(void)
+{
+}
+
+void matriz::cargarmat(int n, int m)
+{for (int a=0;a<n;a++)
+{for (int b=0;b<m;b++)
+{cout<<"M["<<a<<"]["<<b<<"]= ";
+cin>>M[a][b];
+}
+}
+}
+
+void matriz::mostrarmat (int n, int m)
+{for (int a=0;a<n;a++)
+{for (int b=0;b<m;b++)
+{cout<<"M["<<a<<"]["<<b<<"]= "<<M[a][b]<<"  ";
+}cout<<endl;
+}
+}
+
+// ejemplomat.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "matriz.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main()
+{int f,c;
+do {cout<<"Ingrese el numero de filas: ";cin>>f;
+}while(f<1 || f>100);
+do {cout<<"Ingrese el numero de columnas: ";cin>>c;
+}while(c<1 || c>100);
+matriz m1;
+m1.cargarmat(f,c);
+m1.mostrarmat(f,c);
+getch();
+	
+}
