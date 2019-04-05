@@ -1,0 +1,25 @@
+#include "stdAfx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+void factorial(float a);
+
+void main()
+{ float a;
+	do{
+		cout<<"Ingrese un numero a hallar su factorial: ";
+		cin>> a;
+	 }while(a<0);
+ factorial(a);
+ getch();
+}
+ 
+void factorial(float a)
+{ int cont=1, factorial=1;
+	for(cont=1; a>=cont; cont++)
+	{
+		  factorial=factorial*cont;
+	}
+	cout<<"El valor factorial es: "<<factorial;
+}
