@@ -1,0 +1,115 @@
+#pragma once
+class matriz
+{
+private:
+    int mat[10][10];
+    int m,n;
+public:
+    matriz(int _n, int _m);
+    ~matriz(void);
+    void cargarmat();
+    void mostrarmat();
+    void devolvermat(int _mat[10][10]);
+    void sumarmat(int _mat1[10][10],int _mat2[10][10]);
+};
+
+
+#include "StdAfx.h"
+#include "matriz.h"
+#include "iostream"
+using namespace std;
+
+matriz::matriz(int _n,int _m)
+{
+    n=_n;
+    m=_m;
+
+}
+
+
+matriz::~matriz(void)
+{
+}
+
+void matriz::cargarmat()
+{
+    for (int a=0;a<n;a++)
+        for (int b=0;b<m;b++)
+        {
+            cout<<"ingresar m["<<a<<"]["<<b<<"]=";
+            cin>>mat[a][b];
+        }
+    }
+
+
+void matriz::mostrarmat()
+{
+    for (int a=0;a<n;a++)
+        {
+            for (int b=0;b<m;b++)
+            {
+                cout<<mat[a][b];
+            }
+            cout<<endl;
+        }
+}
+
+
+void matriz::devolvermat(int _mat[10][10])
+{
+    for (int a=0;a<n;a++)
+        for (int b=0;b<m;b++)
+        {
+            _mat[a][b]=mat[a][b];
+        }
+}
+
+void matriz::sumarmat(int _mat1[10][10],int _mat2[10][10])
+{
+    for (int a=0;a<n;a++)
+        {for (int b=0;b<m;b++)
+        {
+            mat[a][b]=_mat1[a][b]+_mat2[a][b];
+           
+        }}
+}
+
+
+
+// arrays.cpp : Defines the entry point for the console application.
+//
+
+#include "StdAfx.h"
+#include "matriz.h"
+#include "iostream"
+#include "conio.h"
+using namespace std;
+
+void main()
+{
+    int nrow,ncol,mat1[10][10],mat2[10][10];
+    do{
+        cout<<"ingrese num fil: ";
+        cin>>nrow;
+    }while(nrow<0||nrow>10);
+
+    do{
+        cout<<"ingrese num col: ";
+        cin>>ncol;
+    }while(ncol<0||ncol>10);
+
+    matriz m1(nrow,ncol);
+    matriz m2(nrow,ncol);
+    m1.cargarmat();
+    m1.devolvermat(mat1);
+    m1.mostrarmat();
+    m2.cargarmat();
+    m2.devolvermat(mat2);
+    m2.mostrarmat();
+    matriz m3(nrow,ncol);
+    m3.sumarmat(mat1,mat2);
+    cout<<"la matriz suma es:"<<endl;
+    m3.mostrarmat();
+    getch();
+
+}
